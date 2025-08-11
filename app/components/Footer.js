@@ -29,7 +29,7 @@ const Footer = () => {
         <div>
           <h2 className="text-xl font-bold mb-4">Follow Me</h2>
           <div className="flex justify-center md:justify-start gap-6 text-2xl text-gray-300">
-            <a href="https://github.com/ShahanwazSaddam144/Butt Networks" target="_blank" rel="noopener noreferrer" className="hover:text-white transition">
+            <a href="https://github.com/ShahanwazSaddam144/Butt-Networks" target="_blank" rel="noopener noreferrer" className="hover:text-white transition">
               <FaGithub />
             </a>
             <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noopener noreferrer" className="hover:text-white transition">
