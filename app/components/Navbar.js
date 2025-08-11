@@ -1,9 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { useSession, signOut } from 'next-auth/react';
 import Link from 'next/link';
-import Image from 'next/image';
 import {
   Sun,
   Moon,
@@ -11,16 +9,15 @@ import {
   X,
   Home,
   MessageSquare,
-  Phone,
   LineChart,
-  LogOut,
-  User2
+  User2,
+  FolderGit,
+  Phone
 } from 'lucide-react';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isDarkMode, setIsDarkMode] = useState(false);
-  const { data: session } = useSession();
 
   const handleDarkMode = () => {
     const darkModeOn = !isDarkMode;
@@ -37,13 +34,13 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav className="Navbar bg-gray-300  p-4 h-auto relative z-10 shadow-md">
+    <nav className="Navbar bg-gray-300 p-4 h-auto relative z-10 shadow-md">
       <div className="flex justify-between items-center max-w-6xl mx-auto">
         {/* Logo */}
-        <h1 className="text-[30px] font-bold">TradeX</h1>
+        <h1 className="text-[30px] font-bold">Butt Networks</h1>
 
-        {/* Desktop links */}
-        <ul className="hidden md:flex space-x-8 items-center">
+        {/* Desktop links - visible only after 1021px */}
+        <ul className="hidden min-[1021px]:flex space-x-8 items-center">
           <li>
             <Link
               href="#home"
@@ -54,26 +51,34 @@ const Navbar = () => {
           </li>
           <li>
             <Link
-              href="#charts"
+              href="#about"
               className="flex items-center gap-2 hover:text-yellow-300 hover:bg-gray-500 dark:hover:bg-gray-700 px-4 py-2 rounded font-semibold"
             >
-              <MessageSquare size={18} /> Charts
+              <MessageSquare size={18} /> About
             </Link>
           </li>
           <li>
             <Link
-              href="#prices"
+              href="#projects"
               className="flex items-center gap-2 hover:text-yellow-300 hover:bg-gray-500 dark:hover:bg-gray-700 px-4 py-2 rounded font-semibold"
             >
-              <LineChart size={18} /> Live Prices
+              <FolderGit size={18} /> Projects
             </Link>
           </li>
           <li>
             <Link
-              href="/profile"
+              href="#ceo"
               className="flex items-center gap-2 hover:text-yellow-300 hover:bg-gray-500 dark:hover:bg-gray-700 px-4 py-2 rounded font-semibold"
             >
-              <User2 size={18} /> Profile
+              <User2 size={18} /> Our CEO
+            </Link>
+          </li>
+          <li>
+            <Link
+              href="#contact"
+              className="flex items-center gap-2 hover:text-yellow-300 hover:bg-gray-500 dark:hover:bg-gray-700 px-4 py-2 rounded font-semibold"
+            >
+              <Phone size={18} /> Contact
             </Link>
           </li>
           <li>
@@ -81,37 +86,20 @@ const Navbar = () => {
               {isDarkMode ? <Moon size={22} /> : <Sun size={22} />}
             </button>
           </li>
-          {session?.user && (
-            <li className="relative group">
-              <Image
-                src={session.user.image}
-                alt="avatar"
-                width={36}
-                height={36}
-                className="rounded-full cursor-pointer border-2 border-gray-400 dark:border-gray-600"
-              />
-              <button
-                onClick={() => signOut()}
-                className="absolute top-10 right-0 flex items-center gap-1 bg-red-500 px-3 py-1 rounded text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-200 text-white"
-              >
-                <LogOut size={16} /> Logout
-              </button>
-            </li>
-          )}
         </ul>
 
-        {/* Mobile Hamburger */}
+        {/* Mobile Hamburger - visible only up to 1020px */}
         <button
-          className="md:hidden text-2xl"
+          className="min-[1021px]:hidden text-2xl"
           onClick={() => setIsOpen(!isOpen)}
         >
           {isOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
 
-      {/* Mobile dropdown */}
+      {/* Mobile dropdown - visible only on small screens */}
       {isOpen && (
-        <ul className="md:hidden mt-4 space-y-4 w-[160px] mx-auto text-center rounded-lg py-4 shadow-lg">
+        <ul className="min-[1021px]:hidden mt-4 space-y-4 w-[160px] mx-auto text-center rounded-lg py-4 shadow-lg">
           <li>
             <Link
               href="#home"
@@ -122,26 +110,34 @@ const Navbar = () => {
           </li>
           <li>
             <Link
-              href="#chats"
+              href="#about"
               className="flex items-center justify-center gap-2 px-3 py-2 rounded active:bg-gray-400 dark:active:bg-gray-700"
             >
-              <MessageSquare size={18} /> Chats
+              <MessageSquare size={18} /> About
             </Link>
           </li>
           <li>
             <Link
-              href="#prices"
+              href="#projects"
               className="flex items-center justify-center gap-2 px-3 py-2 rounded active:bg-gray-400 dark:active:bg-gray-700"
             >
-              <LineChart size={18} /> Live Prices
+              <LineChart size={18} /> Projects
             </Link>
           </li>
           <li>
             <Link
-              href="/profile"
+              href="#ceo"
               className="flex items-center justify-center gap-2 px-3 py-2 rounded active:bg-gray-400 dark:active:bg-gray-700"
             >
-              <User2 size={18} /> Profile
+              <User2 size={18} /> Our CEO
+            </Link>
+          </li>
+          <li>
+              <Link
+              href="#contact"
+              className="flex items-center justify-center gap-2 px-3 py-2 rounded active:bg-gray-400 dark:active:bg-gray-700"
+            >
+              <Phone size={18} /> Contact
             </Link>
           </li>
           <li>
@@ -152,23 +148,6 @@ const Navbar = () => {
               {isDarkMode ? <Moon size={18} /> : <Sun size={18} />} Theme
             </button>
           </li>
-          {session?.user && (
-            <li className="flex flex-col items-center gap-2">
-              <Image
-                src={session.user.image}
-                alt="avatar"
-                width={36}
-                height={36}
-                className="rounded-full border-2 border-gray-400 dark:border-gray-600"
-              />
-              <button
-                onClick={() => signOut()}
-                className="flex items-center gap-1 px-3 py-1 bg-red-500 text-white rounded text-sm"
-              >
-                <LogOut size={16} /> Logout
-              </button>
-            </li>
-          )}
         </ul>
       )}
     </nav>
