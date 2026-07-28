@@ -224,6 +224,54 @@ export const projects = [
     ],
   },
 
+{
+  slug: "learncode-website",
+  Heading: "LearnCode",
+  Text: "A project-based online programming learning platform with an interactive in-browser code editor, multi-language execution, and Stripe-powered course purchases — built for developers who learn by shipping, not watching slides.",
+  description:
+    "LearnCode is a full-stack e-learning platform teaching JavaScript, HTML, CSS, Python, C, React, and Node.js through hands-on, project-based courses. Its core is an interactive lesson viewer that runs code directly in the browser — JavaScript natively, Python via Pyodide, SQL via sql.js, C via JSCPP, and live-rendered HTML/CSS and React/JSX — so learners write and execute real code alongside each lesson instead of just reading theory. Courses are stored in MongoDB with structured lesson content, and access is purchase-gated through a Stripe embedded checkout flow. The platform is built for depth over volume: a small, deliberately structured course catalog focused on explaining the 'why' behind the code, not just the syntax.",
+  demoLink: "https://learncode.buttnetworks.com/",
+  frontendRepo: "https://github.com/ShahnawazSaddam16/learn-code",
+  backendRepo: "https://github.com/ShahnawazSaddam16/LearnCode-Backend",
+  image: "/ProjectImages/LearnCode/Image1.png",
+  gallery: [
+    "/ProjectImages/LearnCode/Image1.png",
+    "/ProjectImages/LearnCode/Image2.png",
+  ],
+  technologies: [
+    "Next.js",
+    "Tailwind CSS",
+    "Node.js",
+    "Express.js",
+    "MongoDB",
+    "Stripe",
+  ],
+  author: "Shahnawaz Saddam Butt",
+  email: "shahnawazsaddamb@gmail.com",
+  startDate: "July 20, 2026",
+  endDate: "July 29, 2026",
+  status: "Completed",
+  role: "Full Stack Developer",
+  category: "E-Learning Platform",
+  features: [
+    "In-browser multi-language code execution (JS, Python, SQL, C, HTML/CSS, React)",
+    "MongoDB-backed lesson content with theory and code sections per lesson",
+    "Purchase-gated course access via Stripe embedded checkout",
+    "Structured, project-based course paths across 7+ languages/frameworks",
+  ],
+  challenges: [
+    "Running multiple language runtimes (Pyodide, JSCPP, sql.js) safely in-browser without blocking the UI",
+    "Migrating lesson content from static repo links to a structured MongoDB schema",
+    "Handling Stripe payment states cleanly, including multiple pending purchase attempts per user",
+  ],
+  outcomes: [
+    "20+ courses shipped, 10,000+ students taught",
+    "4.9 average course rating",
+    "Seeded and launched large lesson libraries (56 React lessons, 40 C lessons) with a fully working purchase flow",
+  ],
+},
+
+
   {
     slug: "spotifyclone-app",
     Heading: "Spotify-Clone",
