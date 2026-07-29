@@ -1,10 +1,24 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { ArrowRight, X, Sparkles } from "lucide-react";
 
+const EXPIRY_DATE = new Date("2026-08-10T23:59:59");
+
 export default function Header() {
-  const [visible, setVisible] = useState(true);
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    const dismissed = localStorage.getItem("learncode-header-dismissed");
+    if (new Date() < EXPIRY_DATE && !dismissed) {
+      setVisible(true);
+    }
+  }, []);
+
+  const handleDismiss = () => {
+    localStorage.setItem("learncode-header-dismissed", "true");
+    setVisible(false);
+  };
 
   if (!visible) return null;
 
@@ -29,7 +43,7 @@ export default function Header() {
             </a>
           </div>
           <button
-            onClick={() => setVisible(false)}
+            onClick={handleDismiss}
             aria-label="Dismiss"
             className="absolute right-0 p-1 text-neutral-300 hover:text-neutral-300 transition-colors"
           >
