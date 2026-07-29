@@ -7,6 +7,7 @@ import React, { useEffect } from 'react'
 import Projects from '../projects/[slug]/Projects';
 import WhatWeFix from '@/components/landing/WhatWeFix';
 import Services from '@/components/landing/Services';
+import Header from '@/components/landing/Header';
 
 const Home = () => {
   useEffect(() => {

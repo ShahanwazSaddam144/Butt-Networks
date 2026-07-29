@@ -7,6 +7,7 @@ import { FaWhatsapp } from 'react-icons/fa';
 import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 import { Sora, Inter } from 'next/font/google';
+import Header from '../landing/Header';
 
 const sora = Sora({
   subsets: ['latin'],
@@ -159,6 +160,7 @@ const Navbar = () => {
           </Link>
         </div>
       </div>
+      <Header />
     </nav>
   );
 };

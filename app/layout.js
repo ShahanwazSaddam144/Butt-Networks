@@ -4,6 +4,7 @@ import Navbar from "@/components/App-Shell/Navbar";
 import Footer from "@/components/App-Shell/Footer";
 import { projects } from "../Data/projectsData";
 import Chatbot from "@/components/App-Shell/Chatbot";
+import Header from "@/components/landing/Header";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
