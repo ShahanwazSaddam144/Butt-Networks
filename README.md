@@ -169,9 +169,3 @@ Maintained by the Butt Networks team:
 Suggested: **MIT** — change to your preferred license in `LICENSE` file.
 
 ---
-
-# Troubleshooting & tips
-
-- If contact emails aren't sending: verify SMTP credentials, check provider (Gmail requires App Password when 2FA enabled).
-- If haptics don't work on iOS: the browser may require a user gesture to unlock the AudioContext — test on a real device.
-- If images don't show in production: ensure `public` paths are correct and not blocked by CSP.
