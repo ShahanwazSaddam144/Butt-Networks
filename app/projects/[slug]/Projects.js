@@ -184,7 +184,7 @@ function ProjectCard({ project, index }) {
         transform: inView ? "translateY(0) scale(1)" : "translateY(48px) scale(0.97)",
         transitionDelay: `${index * 0.1}s`,
       }}
-      className={`relative flex h-[840px] w-full flex-col self-start overflow-hidden rounded-3xl bg-slate-800/40 backdrop-blur-md transition-all duration-700 ease-out ${
+      className={`relative flex h-[895px] w-full flex-col self-start overflow-hidden rounded-3xl bg-slate-800/40 backdrop-blur-md transition-all duration-700 ease-out ${
         isActive
           ? "border border-cyan-600/40 shadow-[0_0_0_1px_rgba(34,211,238,0.08),0_35px_90px_rgba(0,0,0,0.65),0_0_55px_rgba(34,211,238,0.12)]"
           : "border border-slate-800 shadow-[0_12px_40px_rgba(0,0,0,0.45)]"

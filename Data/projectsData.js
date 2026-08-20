@@ -151,6 +151,10 @@ export const projects = [
     technologies: [
       "React Native",
       "Native Wind",
+      "Node.Js",
+      "Express.Js",
+      "MongoDB",
+      "Groq"
     ],
     author: "Shahnawaz Saddam Butt",
     email: "shahnawazsaddamb@gmail.com",
